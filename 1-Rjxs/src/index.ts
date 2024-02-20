@@ -5,9 +5,13 @@ let source = from(numbers);
 
 function component() {
   source.subscribe({
-    next: (x) => console.log(x),
+    next: (x: number) => console.log(x),
+    error: (e: Error) => console.log(e),
+    complete: ()=> {'Complete'}
+    
     
   });  
 }
 
 component();
+
